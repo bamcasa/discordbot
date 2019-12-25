@@ -39,7 +39,7 @@ async def on_message(message):
         await message.channel.send(embed=embed)
     elif message.content.startswith("6번"):
         embed = discord.Embed(color=0x363535)
-        embed.set_image(url=f"https://i.imgur.com/PkGU9ou.gif")
+        embed.set_image(url=f"https://i.imgur.com/5YLCH2N.gif")
         await message.channel.send(embed=embed)
     try:
         if message.content[1] == ':' and message.content.count(':') == 2: #이모티콘
