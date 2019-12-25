@@ -17,6 +17,30 @@ async def on_message(message):
         uesr_id = message.author.id
         await message.channel.send(f"<@{uesr_id}>")
         await message.channel.send("정상작동중")
+    elif message.content.startswith("1번"):
+        embed = discord.Embed(color=0x363535)
+        embed.set_image(url=f"https://i.imgur.com/CYZME4q.png")
+        await message.channel.send(embed=embed)
+    elif message.content.startswith("2번"):
+        embed = discord.Embed(color=0x363535)
+        embed.set_image(url=f"https://i.imgur.com/2TIcw5B.gif")
+        await message.channel.send(embed=embed)
+    elif message.content.startswith("3번"):
+        embed = discord.Embed(color=0x363535)
+        embed.set_image(url=f"https://i.imgur.com/HQ29nZE.gif")
+        await message.channel.send(embed=embed)
+    elif message.content.startswith("4번"):
+        embed = discord.Embed(color=0x363535)
+        embed.set_image(url=f"https://i.imgur.com/tmZRX5v.gif")
+        await message.channel.send(embed=embed)
+    elif message.content.startswith("5번"):
+        embed = discord.Embed(color=0x363535)
+        embed.set_image(url=f"https://i.imgur.com/XDj7xjo.gif")
+        await message.channel.send(embed=embed)
+    elif message.content.startswith("6번"):
+        embed = discord.Embed(color=0x363535)
+        embed.set_image(url=f"https://i.imgur.com/PkGU9ou.gif")
+        await message.channel.send(embed=embed)
     try:
         if message.content[1] == ':' and message.content.count(':') == 2: #이모티콘
             if "testgif" in message.content:
@@ -29,7 +53,7 @@ async def on_message(message):
                 embed.set_image(url=f"https://cdn.discordapp.com/emojis/{number}.png?v=1")
                 await message.channel.send(embed=embed)
     except:
-        print("error")
+        pass
 
 
 client.run(token)
