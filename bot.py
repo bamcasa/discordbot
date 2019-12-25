@@ -17,6 +17,10 @@ async def on_message(message):
         uesr_id = message.author.id
         await message.channel.send(f"<@{uesr_id}>")
         await message.channel.send("정상작동중")
+    elif message.content.startswith("🤔"):
+        embed = discord.Embed(color=0x363535)
+        embed.set_image(url=f"https://i.imgur.com/5YLCH2N.gif")
+        await message.channel.send(embed=embed)
     elif message.content.startswith("1번"):
         embed = discord.Embed(color=0x363535)
         embed.set_image(url=f"https://i.imgur.com/CYZME4q.png")
