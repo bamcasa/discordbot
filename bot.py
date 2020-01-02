@@ -1,4 +1,7 @@
 import discord
+import socket
+import subprocess
+
 
 client = discord.Client()
 with open("token.txt", "r") as f:
@@ -17,6 +20,8 @@ async def on_message(message):
         uesr_id = message.author.id
         await message.channel.send(f"<@{uesr_id}>")
         await message.channel.send("정상작동중")
+        IP = subprocess.check_output("hostname -I", shell=True)
+        await message.channel.send(IP.decode('utf-8'))
     elif message.content.startswith("🤔"):
         embed = discord.Embed(color=0x363535)
         embed.set_image(url=f"https://i.imgur.com/5YLCH2N.gif")
