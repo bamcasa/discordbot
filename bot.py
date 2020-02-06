@@ -22,6 +22,10 @@ async def on_message(message):
         await message.channel.send("정상작동중")
         IP = subprocess.check_output("hostname -I", shell=True)
         await message.channel.send(IP.decode('utf-8'))
+    elif message.content.startswith("!포켓몬검색") or message.content.startswith("!포검"):
+        msg = message.content.split()[1]
+        await message.channel.send(f"https://pokemon.fandom.com/ko/wiki/{msg}")
+
     elif message.content.startswith("🤔"):
         embed = discord.Embed(color=0x363535)
         embed.set_image(url=f"https://i.imgur.com/5YLCH2N.gif")
