@@ -9,7 +9,7 @@ with open("token.txt", "r") as f:
 @client.event
 async def on_ready():
     print(client.user.id)
-    game = discord.Game("테스트")
+    game = discord.Game("창건이찾지마")
     await client.change_presence(status=discord.Status.online, activity=game)
 
 
@@ -25,7 +25,10 @@ async def on_message(message):
     elif message.content.startswith("!포켓몬검색") or message.content.startswith("!포검"):
         msg = message.content.split()[1]
         await message.channel.send(f"https://pokemon.fandom.com/ko/wiki/{msg}")
-
+    elif "창건" in message.content or "빡빡이" in message.content:
+        embed = discord.Embed(title="창건이는 식도염에 걸려 고생하고있으니 부르지마세요", color=0x00ff56)
+        embed.set_footer(text="음상훈 병신")
+        await message.channel.send(embed=embed)
     elif message.content.startswith("🤔"):
         embed = discord.Embed(color=0x363535)
         embed.set_image(url=f"https://i.imgur.com/5YLCH2N.gif")

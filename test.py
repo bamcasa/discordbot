@@ -2,6 +2,9 @@ import discord
 
 client = discord.Client()
 
+with open("token.txt", "r") as f:
+    token = f.read()
+
 @client.event
 async def on_ready():
     print(client.user.id)
@@ -38,4 +41,4 @@ async def on_reaction_add(reaction, uesr):
 
 
 
-client.run("NjU5NjcyNDQ3MTM3NzQyODU3.Xk1diQ.EThmR6UMflGeWJmm2rLK2k2ac7Q")
+client.run("token")
